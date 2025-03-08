@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import FormattingToolbar from './FormattingToolbar';
 import PreviewPane from './PreviewPane';
@@ -9,8 +10,8 @@ const MarkdownEditor: React.FC = () => {
   const [markdown, setMarkdown] = useState<string>('# Welcome to Markdown Editor\n\nStart typing here...\n\n## LaTeX Support\n\nYou can write math formulas like $E = mc^2$ or:\n\n$$\n\\frac{d}{dx}\\left( \\int_{a}^{x} f(t)\\,dt\\right) = f(x)\n$$\n\n## Features\n\n- **Bold** and *italic* text\n- Lists and checkboxes\n- [x] Todo items\n- Code blocks\n\n```javascript\nfunction hello() {\n  console.log("Hello, world!");\n}\n```\n\n> Block quotes for citations\n');
   const [selectionStart, setSelectionStart] = useState<number>(0);
   const [selectionEnd, setSelectionEnd] = useState<number>(0);
-  const [writingFont, setWritingFont] = useState<Font>('jetbrains-mono');
-  const [readingFont, setReadingFont] = useState<Font>('jetbrains-mono');
+  const [writingFont, setWritingFont] = useState<Font>('labrada');
+  const [readingFont, setReadingFont] = useState<Font>('labrada');
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 

@@ -55,7 +55,7 @@ const PreviewPane: React.FC<PreviewPaneProps> = ({ content, readingFont }) => {
             code({node, className, children, ...props}) {
               const match = /language-(\w+)/.exec(className || '');
               return !match ? (
-                <code className={className} {...props}>
+                <code className="font-jetbrains-mono" {...props}>
                   {children}
                 </code>
               ) : (
@@ -63,6 +63,7 @@ const PreviewPane: React.FC<PreviewPaneProps> = ({ content, readingFont }) => {
                   style={tomorrow}
                   language={match[1]}
                   PreTag="div"
+                  className="font-jetbrains-mono"
                   {...props}
                 >
                   {String(children).replace(/\n$/, '')}
