@@ -128,4 +128,8 @@
   .glass-panel {
     @apply bg-white/80 backdrop-blur-sm border border-gray-100;
   }
+
+  .font-jetbrains-mono {
+    font-family: 'JetBrains Mono', monospace !important;
+  }
 }
