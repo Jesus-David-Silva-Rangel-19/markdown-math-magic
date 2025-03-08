@@ -52,9 +52,13 @@ const PreviewPane: React.FC<PreviewPaneProps> = ({ content, readingFont }) => {
           remarkPlugins={[remarkMath, remarkGfm]}
           rehypePlugins={[rehypeKatex]}
           components={{
-            code({node, inline, className, children, ...props}) {
+            code({node, className, children, ...props}) {
               const match = /language-(\w+)/.exec(className || '');
-              return !inline && match ? (
+              return !match ? (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              ) : (
                 <SyntaxHighlighter
                   style={tomorrow}
                   language={match[1]}
@@ -63,10 +67,6 @@ const PreviewPane: React.FC<PreviewPaneProps> = ({ content, readingFont }) => {
                 >
                   {String(children).replace(/\n$/, '')}
                 </SyntaxHighlighter>
-              ) : (
-                <code className={className} {...props}>
-                  {children}
-                </code>
               );
             }
           }}

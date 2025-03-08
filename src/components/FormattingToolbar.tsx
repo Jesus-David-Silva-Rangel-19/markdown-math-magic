@@ -22,7 +22,7 @@ import {
   ListOrdered,
   CheckSquare,
   FileText,
-  Function as MathFunction,
+  Calculator,
   Copy,
   Download
 } from 'lucide-react';
@@ -102,7 +102,7 @@ const FormattingToolbar: React.FC<FormattingToolbarProps> = ({
               className="h-8 w-8" 
               onClick={onInsertLatex}
             >
-              <MathFunction size={18} />
+              <Calculator size={18} />
             </Button>
           </TooltipTrigger>
           <TooltipContent>
